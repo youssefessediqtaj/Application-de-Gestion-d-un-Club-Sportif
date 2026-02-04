@@ -1,0 +1,162 @@
+UML CLASS DIAGRAM - APPLICATION DE GESTION D'UN CLUB SPORTIF
+=============================================================
+
++---------------------+         +-------------------+
+|      Personne       |         |     Paiement      |
++---------------------+         +-------------------+
+| - id: int           |         | - id: int         |
+| - nom: string       |         | - idMembre: int   |
+| - prenom: string    |         | - montant: double |
+| - dateNaissance:    |         | - date: string    |
+|   string            |         | - statut: string  |
+| - email: string     |         | - type: string    |
+| - telephone: string |         +-------------------+
++---------------------+                    |
+| + getId(): int      |                    |
+| + getNom(): string  |                    |
+| + getPrenom():      |                    |
+|   string            |                    |
+| + getDateNaissance():|                   |
+|   string            |                    |
+| + getEmail():       |                    |
+|   string            |                    |
+| + getTelephone():   |                    |
+|   string            |                    |
+| + setNom(string):   |                    |
+|   void              |                    |
+| + setPrenom(string):|                   |
+|   void              |                    |
+| + setDateNaissance: |                    |
+|   (string): void    |                    |
+| + setEmail(string): |                    |
+|   void              |                    |
+| + setTelephone      |                    |
+|   (string): void    |                    |
++---------------------+                    |
+         ^                                  |
+         |                                  |
++---------------------+         +-------------------+
+|      Membre         |         |      Seance       |
++---------------------+         +-------------------+
+| - numeroMembre:     |         | - id: int         |
+|   string            |         | - idEquipe: int   |
+| - dateInscription:  |         | - date: string    |
+|   string            |         | - heureDebut:     |
+| - statut: string    |         |   string          |
+| - cotisation:       |         | - duree: int      |
+|   double            |         | - type: string    |
++---------------------+         | - coach: string   |
+| + getNumeroMembre():|         +-------------------+
+|   string            |         | + getId(): int    |
+| + getDateInscription|         | + getIdEquipe():  |
+|   (): string        |         |   int             |
+| + getStatut():      |         | + getDate():      |
+|   string            |         |   string          |
+| + getCotisation():  |         | + getHeureDebut():|
+|   double            |         |   string          |
+| + setNumeroMembre   |         | + getDuree(): int |
+|   (string): void    |         | + getType():      |
+| + setDateInscription|         |   string          |
+|   (string): void    |         | + getCoach():     |
+| + setStatut(string):|         |   string          |
+|   void              |         +-------------------+
+| + setCotisation     |                    |
+|   (double): void    |                    |
++---------------------+                    |
+         |                                  |
+         |                                  |
++---------------------+         +-------------------+
+|    Entraineur       |         |      Equipe       |
++---------------------+         +-------------------+
+| - specialite:       |         | - id: int         |
+|   string            |         | - nom: string     |
+| - salaire: double   |         | - sport: string   |
++---------------------+         | - coach: int      |
+| + getSpecialite():  |         | - membres: vector |
+|   string            |         |   <int>           |
+| + getSalaire():     |         +-------------------+
+|   double            |         | + getId(): int    |
+| + setSpecialite     |         | + getNom():       |
+|   (string): void    |         |   string          |
+| + setSalaire        |         | + getSport():     |
+|   (double): void    |         |   string          |
+|                     |         | + getCoach():     |
++---------------------+         |   int             |
+                               | + getMembres():   |
+                               |   vector<int>     |
+                               | + setNom(string): |
+                               |   void            |
+                               | + setSport        |
+                               |   (string): void  |
+                               | + setCoach(int):  |
+                               |   void            |
+                               | + addMembre(int): |
+                               |   void            |
+                               +-------------------+
+                                        |
+                                        |
+                               +---------------------+
+                               |   ClubSportif       |
+                               +---------------------+
+                               | - membres: vector   |
+                               |   <Membre>          |
+                               | - equipes: vector   |
+                               |   <Equipe>          |
+                               | - entraineurs:      |
+                               |   vector<Entraineur>|
+                               | - paiements:        |
+                               |   vector<Paiement>  |
+                               | - sessions:         |
+                               |   vector<Seance>    |
+                               | - idCounter: int    |
+                               +---------------------+
+                               | + ajouterMembre     |
+                               |   (Membre): void    |
+                               | + modifierMembre    |
+                               |   (int, Membre):    |
+                               |   void              |
+                               | + supprimerMembre   |
+                               |   (int): void       |
+                               | + chercherMembre    |
+                               |   (int): Membre*    |
+                               | + listerMembres():  |
+                               |   vector<Membre>    |
+                               | + ajouterEquipe     |
+                               |   (Equipe): void    |
+                               | + assignerMembre    |
+                               |   AEquipe(int,      |
+                               |   int, int): void   |
+                               | + assignerCoach     |
+                               |   AEquipe(int,      |
+                               |   int): void        |
+                               | + ajouterEntraineur |
+                               |   (Entraineur):     |
+                               |   void              |
+                               | + modifierEntraineur|
+                               |   (int,             |
+                               |   Entraineur): void |
+                               | + supprimerEntraineur|
+                               |   (int): void       |
+                               | + creerSeance       |
+                               |   (Seance): void    |
+                               | + modifierSeance    |
+                               |   (int, Seance):    |
+                               |   void              |
+                               | + supprimerSeance   |
+                               |   (int): void       |
+                               | + enregistrerPaiement|
+                               |   (Paiement): void  |
+                               | + chargerDonnees(): |
+                               |   void              |
+                               | + sauvegarderDonnees|
+                               |   (): void          |
+                               +---------------------+
+
+RELATIONSHIPS:
+- Membre and Entraineur inherit from Personne (inheritance)
+- Equipe has a coach (Entraineur) - association
+- Equipe has multiple membres (Membre) - aggregation
+- Seance is associated with an Equipe - association
+- Seance has a coach - association
+- Paiement is associated with a Membre - association
+- ClubSportif manages all entities - composition
