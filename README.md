@@ -101,3 +101,11 @@ Le backend écoute sur `http://localhost:8080`.
 Le projet suit une architecture client-serveur :
 - **Backend** : Core business logic en C++, serveur HTTP multi-threadé, couche d'accès aux données (DAO) pour MySQL.
 - **Frontend** : Application Single Page (SPA) moderne, gestion d'état avec Hooks, services API dédiés.
+
+## Contribution
+
+Les contributions sont les bienvenues ! Veuillez consulter le fichier CONTRIBUTING.md pour plus de détails.
+
+## Licence
+
+Ce projet n'a pas encore de licence spécifiée. Veuillez contacter les mainteneurs pour plus d'informations.

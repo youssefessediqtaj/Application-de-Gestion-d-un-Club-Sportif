@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Compiled files
+*.o
+*.exe
+*.out
+
+# Database files
+*.sql
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.iml
