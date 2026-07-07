@@ -1,6 +1,10 @@
 # Application de Gestion d'un Club Sportif
 
-Application de gestion complète d'un club sportif développée en C++ pour le backend et React pour l'interface utilisateur. Cette version intègre une base de données MySQL pour une meilleure robustesse et scalabilité.
+Application de gestion d'un club sportif développée en C++ pour le backend et React pour l'interface utilisateur.
+
+> Ce projet est un projet académique réalisé dans un objectif d'apprentissage et de démonstration.
+
+Cette version intègre une base de données MySQL pour la persistance des données.
 
 ## Technologies utilisées
 
@@ -28,6 +32,8 @@ Application de gestion complète d'un club sportif développée en C++ pour le b
 │   ├── main.cpp
 │   └── club_sportif_mysql (exécutable)
 ├── frontend/ (projet React/Vite)
+├── assets/
+│   └── screenshots/
 └── docs/
     ├── migration_mysql.md
     ├── rapport_projet.md
@@ -87,6 +93,24 @@ Le backend écoute sur `http://localhost:8080`.
 - **Administrateur** : `admin` / `admin123`
 - **Entraîneur** : `coach1` / `coach123`
 - **Membre** : `membre1` / `membre123`
+
+## Captures d'écran
+
+### Connexion
+
+![Page de connexion](assets/screenshots/login.png)
+
+### Tableau de bord administrateur
+
+![Tableau de bord administrateur](assets/screenshots/admin.png)
+
+### Espace entraîneur
+
+![Espace entraîneur](assets/screenshots/coach.png)
+
+### Espace membre
+
+![Espace membre](assets/screenshots/membre.png)
 
 ## Fonctionnalités clés
 
